@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Riko Klub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar">
+        <a class="logo" href="#">Riko Klub</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="about">
+        <div class="container">
+          <h1>Welcome to Riko Klub</h1>
+          <p>
+            Experience the vibrant blend of music, culture, and cuisine that keeps
+            our community coming back for more.
+          </p>
+        </div>
+      </section>
+
+      <section class="gallery" id="gallery">
+        <div class="container">
+          <h2>Gallery</h2>
+          <div class="gallery-grid">
+            <figure>
+              <img src="https://via.placeholder.com/320x200" alt="Live band" />
+              <figcaption>Live performances every weekend.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://via.placeholder.com/320x200" alt="Signature drink" />
+              <figcaption>Signature drinks crafted by our mixologists.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://via.placeholder.com/320x200" alt="Cozy interior" />
+              <figcaption>Relax in our cozy lounge spaces.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu" id="menu">
+        <div class="container">
+          <h2>Menu</h2>
+          <div class="menu-grid">
+            <article class="menu-section">
+              <h3>Food</h3>
+              <div class="menu-items">
+                <article class="menu-item">
+                  <h4>Charred Octopus</h4>
+                  <p class="menu-description">
+                    Fire-grilled octopus with smoked paprika potatoes and citrus aioli.
+                  </p>
+                  <p class="menu-price">$18</p>
+                </article>
+                <article class="menu-item">
+                  <h4>Forager's Risotto</h4>
+                  <p class="menu-description">
+                    Creamy arborio rice with wild mushrooms, herbs, and aged parmesan.
+                  </p>
+                  <p class="menu-price">$16</p>
+                </article>
+                <article class="menu-item">
+                  <h4>Riko Burger</h4>
+                  <p class="menu-description">
+                    Grass-fed beef, caramelized onions, smoked gouda, and house pickles.
+                  </p>
+                  <p class="menu-price">$15</p>
+                </article>
+              </div>
+            </article>
+
+            <article class="menu-section">
+              <h3>Drinks</h3>
+              <div class="menu-items">
+                <article class="menu-item">
+                  <h4>Neon Nights</h4>
+                  <p class="menu-description">
+                    Vodka, passion fruit, lime, and a splash of tonic for a luminous finish.
+                  </p>
+                  <p class="menu-price">$12</p>
+                </article>
+                <article class="menu-item">
+                  <h4>Smoked Old Fashioned</h4>
+                  <p class="menu-description">
+                    Rye whiskey, demerara syrup, and bitters served under a smoked glass.
+                  </p>
+                  <p class="menu-price">$14</p>
+                </article>
+                <article class="menu-item">
+                  <h4>Seasonal Mocktail</h4>
+                  <p class="menu-description">
+                    Rotating blend of cold-pressed juices, herbs, and sparkling botanicals.
+                  </p>
+                  <p class="menu-price">$8</p>
+                </article>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container">
+          <h2>Contact</h2>
+          <p>Email us at <a href="mailto:hello@rikoklub.com">hello@rikoklub.com</a></p>
+          <p>123 Grove Street, Suite 8 • Helsinki</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="current-year"></span> Riko Klub. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
