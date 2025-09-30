@@ -1,0 +1,9 @@
+{
+  "headline": "Welcome to Riko Klub",
+  "subheadline": "Community-driven events and art experiences in the heart of the city.",
+  "cta": {
+    "label": "Join the Klub",
+    "url": "https://example.com/join"
+  },
+  "backgroundImage": "/images/hero.jpg"
+}

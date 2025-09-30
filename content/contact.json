@@ -1,0 +1,23 @@
+{
+  "title": "Get in Touch",
+  "description": "We love hearing from artists, collaborators, and new friends.",
+  "email": "hello@rikoklub.com",
+  "phone": "+1 (555) 123-4567",
+  "address": {
+    "name": "Riko Klub HQ",
+    "street": "123 Maker Lane",
+    "city": "Creative City",
+    "state": "CA",
+    "postalCode": "94107"
+  },
+  "social": [
+    {
+      "platform": "Instagram",
+      "url": "https://instagram.com/rikoklub"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://facebook.com/rikoklub"
+    }
+  ]
+}

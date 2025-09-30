@@ -1,0 +1,9 @@
+<section id="hero" class="hero" {% if hero.backgroundImage %}style="background-image: url('{{ hero.backgroundImage }}');"{% endif %}>
+  <div class="container">
+    <h1>{{ hero.headline }}</h1>
+    <p class="lead">{{ hero.subheadline }}</p>
+    {% if hero.cta and hero.cta.url %}
+      <a class="button" href="{{ hero.cta.url }}">{{ hero.cta.label }}</a>
+    {% endif %}
+  </div>
+</section>

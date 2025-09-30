@@ -1,0 +1,21 @@
+{
+  "title": "Gallery",
+  "description": "A rotating look at the artists, performers, and makers who bring Riko Klub to life.",
+  "images": [
+    {
+      "src": "/images/gallery/photo-1.jpg",
+      "alt": "Live performance at Riko Klub",
+      "caption": "Weekly open-mic nights feature up-and-coming performers."
+    },
+    {
+      "src": "/images/gallery/photo-2.jpg",
+      "alt": "Gallery installation",
+      "caption": "Immersive installations transform our space every month."
+    },
+    {
+      "src": "/images/gallery/photo-3.jpg",
+      "alt": "Community workshop",
+      "caption": "Hands-on workshops bring creators of all skill levels together."
+    }
+  ]
+}

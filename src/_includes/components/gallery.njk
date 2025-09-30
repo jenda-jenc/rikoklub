@@ -1,0 +1,16 @@
+<section id="gallery" class="gallery">
+  <div class="container">
+    <h2>{{ gallery.title }}</h2>
+    <p class="section-description">{{ gallery.description }}</p>
+    <div class="gallery-grid">
+      {% for image in gallery.images %}
+        <figure class="gallery-item">
+          <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy" />
+          {% if image.caption %}
+            <figcaption>{{ image.caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>

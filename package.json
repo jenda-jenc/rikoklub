@@ -1,0 +1,24 @@
+{
+  "name": "rikoklub",
+  "version": "1.0.0",
+  "description": "Static site for Riko Klub powered by Eleventy and Netlify CMS.",
+  "main": "eleventy.config.js",
+  "scripts": {
+    "fetch-events": "node scripts/fetchFacebookEvents.js",
+    "build:eleventy": "eleventy",
+    "build": "npm run fetch-events && npm run build:eleventy",
+    "start": "npm run fetch-events && eleventy --serve --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

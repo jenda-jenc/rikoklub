@@ -1,0 +1,30 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>{{ contact.title }}</h2>
+    <p class="section-description">{{ contact.description }}</p>
+    <div class="contact-grid">
+      <div>
+        <h3>Email</h3>
+        <p><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+        <h3>Phone</h3>
+        <p><a href="tel:{{ contact.phone | replace(' ', '') }}">{{ contact.phone }}</a></p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <address>
+          <strong>{{ contact.address.name }}</strong><br />
+          {{ contact.address.street }}<br />
+          {{ contact.address.city }}, {{ contact.address.state }} {{ contact.address.postalCode }}
+        </address>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <ul class="social-links">
+          {% for social in contact.social %}
+            <li><a href="{{ social.url }}" target="_blank" rel="noreferrer">{{ social.platform }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

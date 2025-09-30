@@ -1,0 +1,44 @@
+<section id="events" class="events">
+  <div class="container">
+    <h2>Upcoming Events</h2>
+    {% if events.events | length %}
+      <ul class="event-list">
+        {% for event in events.events %}
+          <li class="event">
+            <h3>{{ event.title }}</h3>
+            <p class="event-meta">
+              <span>{{ event.startDate | formatDate }}</span>
+              {% if event.endDate %}
+                &ndash; <span>{{ event.endDate | formatDate }}</span>
+              {% endif %}
+            </p>
+            {% if event.location %}
+              <p class="event-location">
+                {{ event.location.name }}
+                {% if event.location.city %}
+                  &middot; {{ event.location.city }}
+                {% endif %}
+                {% if event.location.country %}
+                  , {{ event.location.country }}
+                {% endif %}
+              </p>
+            {% endif %}
+            <div class="event-links">
+              {% if event.ticketUrl %}
+                <a class="button secondary" href="{{ event.ticketUrl }}" target="_blank" rel="noreferrer">Get Tickets</a>
+              {% endif %}
+              {% if event.facebookUrl %}
+                <a class="button ghost" href="{{ event.facebookUrl }}" target="_blank" rel="noreferrer">View on Facebook</a>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No upcoming events are scheduled right now. Check back soon!</p>
+    {% endif %}
+    {% if events.lastUpdated %}
+      <p class="events-updated">Last synced: {{ events.lastUpdated | formatDate }}</p>
+    {% endif %}
+  </div>
+</section>

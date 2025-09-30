@@ -1,0 +1,128 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+publish_mode: editorial_workflow
+
+documentation_url: https://www.staticcms.org/docs
+
+description: >-
+  Riko Klub CMS allows editors to update hero copy, gallery images, and contact
+  details. Facebook events are synced automatically and shown as read-only
+  records for reference.
+
+collections:
+  - label: Hero
+    name: hero
+    file: content/hero.json
+    format: json
+    fields:
+      - label: Headline
+        name: headline
+        widget: string
+      - label: Subheadline
+        name: subheadline
+        widget: text
+      - label: Call to Action
+        name: cta
+        widget: object
+        fields:
+          - { label: Label, name: label, widget: string }
+          - { label: URL, name: url, widget: string }
+      - label: Background Image
+        name: backgroundImage
+        widget: string
+        required: false
+  - label: Gallery
+    name: gallery
+    file: content/gallery.json
+    format: json
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text }
+      - label: Images
+        name: images
+        widget: list
+        summary: "{{fields.alt}}"
+        fields:
+          - { label: Image Path, name: src, widget: string }
+          - { label: Alt Text, name: alt, widget: string }
+          - { label: Caption, name: caption, widget: text, required: false }
+  - label: Contact
+    name: contact
+    file: content/contact.json
+    format: json
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: Email, name: email, widget: string }
+      - { label: Phone, name: phone, widget: string }
+      - label: Address
+        name: address
+        widget: object
+        fields:
+          - { label: Location Name, name: name, widget: string }
+          - { label: Street, name: street, widget: string }
+          - { label: City, name: city, widget: string }
+          - { label: State / Province, name: state, widget: string }
+          - { label: Postal Code, name: postalCode, widget: string }
+      - label: Social Links
+        name: social
+        widget: list
+        fields:
+          - { label: Platform, name: platform, widget: string }
+          - { label: URL, name: url, widget: string }
+  - label: Events (Facebook)
+    name: events
+    file: content/events.json
+    format: json
+    delete: false
+    editor:
+      preview: false
+    fields:
+      - label: Last Updated
+        name: lastUpdated
+        widget: datetime
+        required: false
+        format: YYYY-MM-DDTHH:mm:ss[Z]
+        picker_utc: true
+        read_only: true
+      - label: Synced Events
+        name: events
+        widget: list
+        allow_add: false
+        collapsed: true
+        summary: "{{fields.title}}"
+        hint: "Synced from Facebook via npm run fetch-events. Editing is disabled."
+        fields:
+          - { label: Title, name: title, widget: string, read_only: true }
+          - label: Start Date
+            name: startDate
+            widget: datetime
+            format: YYYY-MM-DDTHH:mm:ss[Z]
+            picker_utc: true
+            read_only: true
+          - label: End Date
+            name: endDate
+            widget: datetime
+            required: false
+            format: YYYY-MM-DDTHH:mm:ss[Z]
+            picker_utc: true
+            read_only: true
+          - label: Location
+            name: location
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { label: Name, name: name, widget: string, required: false, read_only: true }
+              - { label: Street, name: street, widget: string, required: false, read_only: true }
+              - { label: City, name: city, widget: string, required: false, read_only: true }
+              - { label: State, name: state, widget: string, required: false, read_only: true }
+              - { label: Postal Code, name: postalCode, widget: string, required: false, read_only: true }
+              - { label: Country, name: country, widget: string, required: false, read_only: true }
+          - { label: Ticket URL, name: ticketUrl, widget: string, required: false, read_only: true }
+          - { label: Facebook URL, name: facebookUrl, widget: string, required: false, read_only: true }
