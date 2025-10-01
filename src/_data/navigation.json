@@ -1,0 +1,6 @@
+[
+  { "href": "#hero", "label": "Domů" },
+  { "href": "#events", "label": "Program" },
+  { "href": "#gallery", "label": "Galerie" },
+  { "href": "#contact", "label": "Kontakt" }
+]
