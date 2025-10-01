@@ -1,6 +1,12 @@
 /**
  * @param {import('@11ty/eleventy/src/UserConfig')} eleventyConfig
  */
+const eventDateFormatter = new Intl.DateTimeFormat('cs-CZ', {
+  dateStyle: 'long',
+  timeStyle: 'short',
+  timeZone: 'Europe/Prague',
+});
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./content');
   eleventyConfig.addPassthroughCopy({ public: '/' });
@@ -11,13 +17,15 @@ module.exports = function (eleventyConfig) {
     if (Number.isNaN(d.getTime())) {
       return date;
     }
-    return d.toLocaleString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-    });
+    return eventDateFormatter
+      .formatToParts(d)
+      .map((part) => {
+        if (part.type === 'literal' && part.value.trim() === 'v') {
+          return ' ';
+        }
+        return part.value;
+      })
+      .join('');
   });
 
   eleventyConfig.addShortcode('currentYear', () => new Date().getFullYear());
