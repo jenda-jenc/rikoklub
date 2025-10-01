@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,11 +14,11 @@
     <header class="site-header">
       <div class="container">
         <a class="logo" href="/">Riko Klub</a>
+        {% set navItems = navigation | default([]) %}
         <nav class="site-nav">
-          <a href="#hero">Home</a>
-          <a href="#events">Events</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#contact">Contact</a>
+          {% for item in navItems %}
+            <a href="{{ item.href }}">{{ item.label }}</a>
+          {% endfor %}
         </nav>
       </div>
     </header>
